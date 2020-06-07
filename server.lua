@@ -1,3 +1,4 @@
+  
 -- ############################################
 -- --------------------------------------------
 -- 3dme : /me command but its 3D printed
@@ -26,6 +27,13 @@ end
 -- --------------------------------------------
 
 RegisterCommand('me', function(source, args)
-    local text = "* the person" .. TableToString(args) .. " *"
-    TriggerClientEvent('3dme:shareDisplay', -1, text, source)
+    local text = "* " .. TableToString(args) .. " *"
+    local cmdtype = 'me'
+     TriggerClientEvent('3dme:shareDisplay', -1, text, source, cmdtype)
+end)
+
+RegisterCommand('do', function(source, args)
+    local text = "* " .. TableToString(args) .. " *"
+    local cmdtype = 'do'
+    TriggerClientEvent('3dme:shareDisplay', -1, text, source, cmdtype)
 end)
